@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OgrenciIsleriOtomasyonModelStoreContainer" CdmEntityContainer="OgrenciIsleriOtomasyonEntities">
+    <EntitySetMapping Name="tblAkademisyen">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblAkademisyen">
+        <MappingFragment StoreEntitySet="tblAkademisyen">
+          <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="TelefonNumarasi" ColumnName="TelefonNumarasi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fakültesi" ColumnName="Fakültesi" />
+          <ScalarProperty Name="Bölümü" ColumnName="Bölümü" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDersProgramı">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblDersProgramı">
+        <MappingFragment StoreEntitySet="tblDersProgramı">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ders" ColumnName="Ders" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Fakülte" ColumnName="Fakülte" />
+          <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDuyuru">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblDuyuru">
+        <MappingFragment StoreEntitySet="tblDuyuru">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DuyuruAdi" ColumnName="DuyuruAdi" />
+          <ScalarProperty Name="Duyuru" ColumnName="Duyuru" />
+          <ScalarProperty Name="DuyuruTarihi" ColumnName="DuyuruTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFakülteBölüm">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblFakülteBölüm">
+        <MappingFragment StoreEntitySet="tblFakülteBölüm">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Fakülte" ColumnName="Fakülte" />
+          <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNotlar">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblNotlar">
+        <MappingFragment StoreEntitySet="tblNotlar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ögrAdSoyad" ColumnName="ögrAdSoyad" />
+          <ScalarProperty Name="Ders" ColumnName="Ders" />
+          <ScalarProperty Name="Vize" ColumnName="Vize" />
+          <ScalarProperty Name="Final" ColumnName="Final" />
+          <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOgrenci">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblOgrenci">
+        <MappingFragment StoreEntitySet="tblOgrenci">
+          <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="TelefonNumarasi" ColumnName="TelefonNumarasi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fakültesi" ColumnName="Fakültesi" />
+          <ScalarProperty Name="Bölümü" ColumnName="Bölümü" />
+          <ScalarProperty Name="Devamszilik" ColumnName="Devamszilik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProgramSorumlusu">
+      <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblProgramSorumlusu">
+        <MappingFragment StoreEntitySet="tblProgramSorumlusu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

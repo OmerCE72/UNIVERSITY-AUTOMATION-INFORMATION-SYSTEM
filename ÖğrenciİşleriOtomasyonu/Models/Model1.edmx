@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OgrenciIsleriOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAkademisyen">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="TC" Type="varchar" MaxLength="20" />
+          <Property Name="TelefonNumarasi" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Şifre" Type="varchar" MaxLength="50" />
+          <Property Name="Fakültesi" Type="varchar" MaxLength="50" />
+          <Property Name="Bölümü" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblDersProgramı">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ders" Type="varchar" MaxLength="50" />
+          <Property Name="Tarih" Type="varchar" MaxLength="50" />
+          <Property Name="Fakülte" Type="varchar" MaxLength="50" />
+          <Property Name="Bölüm" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblDuyuru">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DuyuruAdi" Type="varchar(max)" />
+          <Property Name="Duyuru" Type="varchar(max)" />
+          <Property Name="DuyuruTarihi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblFakülteBölüm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fakülte" Type="varchar" MaxLength="50" />
+          <Property Name="Bölüm" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblNotlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ögrAdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Ders" Type="varchar" MaxLength="50" />
+          <Property Name="Vize" Type="float" />
+          <Property Name="Final" Type="float" />
+          <Property Name="Ortalama" Type="float" />
+        </EntityType>
+        <EntityType Name="tblOgrenci">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="TC" Type="varchar" MaxLength="20" />
+          <Property Name="TelefonNumarasi" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Şifre" Type="varchar" MaxLength="50" />
+          <Property Name="Fakültesi" Type="varchar" MaxLength="50" />
+          <Property Name="Bölümü" Type="varchar" MaxLength="50" />
+          <Property Name="Devamszilik" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tblProgramSorumlusu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="OgrenciIsleriOtomasyonModelStoreContainer">
+          <EntitySet Name="tblAkademisyen" EntityType="Self.tblAkademisyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDersProgramı" EntityType="Self.tblDersProgramı" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDuyuru" EntityType="Self.tblDuyuru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFakülteBölüm" EntityType="Self.tblFakülteBölüm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotlar" EntityType="Self.tblNotlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProgramSorumlusu" EntityType="Self.tblProgramSorumlusu" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OgrenciIsleriOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblAkademisyen">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonNumarasi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fakültesi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bölümü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblDersProgramı">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ders" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fakülte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bölüm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblDuyuru">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DuyuruAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Duyuru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DuyuruTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblFakülteBölüm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fakülte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bölüm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblNotlar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ögrAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ders" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vize" Type="Double" />
+          <Property Name="Final" Type="Double" />
+          <Property Name="Ortalama" Type="Double" />
+        </EntityType>
+        <EntityType Name="tblOgrenci">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonNumarasi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fakültesi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bölümü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Devamszilik" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProgramSorumlusu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="OgrenciIsleriOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAkademisyen" EntityType="Self.tblAkademisyen" />
+          <EntitySet Name="tblDersProgramı" EntityType="Self.tblDersProgramı" />
+          <EntitySet Name="tblDuyuru" EntityType="Self.tblDuyuru" />
+          <EntitySet Name="tblFakülteBölüm" EntityType="Self.tblFakülteBölüm" />
+          <EntitySet Name="tblNotlar" EntityType="Self.tblNotlar" />
+          <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" />
+          <EntitySet Name="tblProgramSorumlusu" EntityType="Self.tblProgramSorumlusu" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OgrenciIsleriOtomasyonModelStoreContainer" CdmEntityContainer="OgrenciIsleriOtomasyonEntities">
+          <EntitySetMapping Name="tblAkademisyen">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblAkademisyen">
+              <MappingFragment StoreEntitySet="tblAkademisyen">
+                <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="TelefonNumarasi" ColumnName="TelefonNumarasi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fakültesi" ColumnName="Fakültesi" />
+                <ScalarProperty Name="Bölümü" ColumnName="Bölümü" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDersProgramı">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblDersProgramı">
+              <MappingFragment StoreEntitySet="tblDersProgramı">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ders" ColumnName="Ders" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Fakülte" ColumnName="Fakülte" />
+                <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDuyuru">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblDuyuru">
+              <MappingFragment StoreEntitySet="tblDuyuru">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DuyuruAdi" ColumnName="DuyuruAdi" />
+                <ScalarProperty Name="Duyuru" ColumnName="Duyuru" />
+                <ScalarProperty Name="DuyuruTarihi" ColumnName="DuyuruTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFakülteBölüm">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblFakülteBölüm">
+              <MappingFragment StoreEntitySet="tblFakülteBölüm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fakülte" ColumnName="Fakülte" />
+                <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotlar">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblNotlar">
+              <MappingFragment StoreEntitySet="tblNotlar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ögrAdSoyad" ColumnName="ögrAdSoyad" />
+                <ScalarProperty Name="Ders" ColumnName="Ders" />
+                <ScalarProperty Name="Vize" ColumnName="Vize" />
+                <ScalarProperty Name="Final" ColumnName="Final" />
+                <ScalarProperty Name="Ortalama" ColumnName="Ortalama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOgrenci">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblOgrenci">
+              <MappingFragment StoreEntitySet="tblOgrenci">
+                <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="TelefonNumarasi" ColumnName="TelefonNumarasi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fakültesi" ColumnName="Fakültesi" />
+                <ScalarProperty Name="Bölümü" ColumnName="Bölümü" />
+                <ScalarProperty Name="Devamszilik" ColumnName="Devamszilik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProgramSorumlusu">
+            <EntityTypeMapping TypeName="OgrenciIsleriOtomasyonModel.tblProgramSorumlusu">
+              <MappingFragment StoreEntitySet="tblProgramSorumlusu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

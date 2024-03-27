@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OgrenciIsleriOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblAkademisyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonNumarasi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fakültesi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bölümü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblDersProgramı">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ders" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fakülte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bölüm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblDuyuru">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DuyuruAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Duyuru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuyuruTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblFakülteBölüm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fakülte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bölüm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblNotlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ögrAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ders" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vize" Type="Double" />
+    <Property Name="Final" Type="Double" />
+    <Property Name="Ortalama" Type="Double" />
+  </EntityType>
+  <EntityType Name="tblOgrenci">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonNumarasi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fakültesi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bölümü" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Devamszilik" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblProgramSorumlusu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="OgrenciIsleriOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblAkademisyen" EntityType="Self.tblAkademisyen" />
+    <EntitySet Name="tblDersProgramı" EntityType="Self.tblDersProgramı" />
+    <EntitySet Name="tblDuyuru" EntityType="Self.tblDuyuru" />
+    <EntitySet Name="tblFakülteBölüm" EntityType="Self.tblFakülteBölüm" />
+    <EntitySet Name="tblNotlar" EntityType="Self.tblNotlar" />
+    <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" />
+    <EntitySet Name="tblProgramSorumlusu" EntityType="Self.tblProgramSorumlusu" />
+  </EntityContainer>
+</Schema>

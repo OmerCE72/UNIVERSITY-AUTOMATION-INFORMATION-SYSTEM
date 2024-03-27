@@ -1,0 +1,6 @@
+program sorumlusu kullanıcı adı:admin 
+şifre:123
+akademisyen kullanıcı adı:isaatas@gmail.com
+şifre:isaatas
+Öğrenci kullanıcı adı:yusuf@gmail.com	
+şifre:yusufaktas

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OgrenciIsleriOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAkademisyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="TC" Type="varchar" MaxLength="20" />
+    <Property Name="TelefonNumarasi" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Şifre" Type="varchar" MaxLength="50" />
+    <Property Name="Fakültesi" Type="varchar" MaxLength="50" />
+    <Property Name="Bölümü" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDersProgramı">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ders" Type="varchar" MaxLength="50" />
+    <Property Name="Tarih" Type="varchar" MaxLength="50" />
+    <Property Name="Fakülte" Type="varchar" MaxLength="50" />
+    <Property Name="Bölüm" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDuyuru">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DuyuruAdi" Type="varchar(max)" />
+    <Property Name="Duyuru" Type="varchar(max)" />
+    <Property Name="DuyuruTarihi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblFakülteBölüm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fakülte" Type="varchar" MaxLength="50" />
+    <Property Name="Bölüm" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblNotlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ögrAdSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="Ders" Type="varchar" MaxLength="50" />
+    <Property Name="Vize" Type="float" />
+    <Property Name="Final" Type="float" />
+    <Property Name="Ortalama" Type="float" />
+  </EntityType>
+  <EntityType Name="tblOgrenci">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="TC" Type="varchar" MaxLength="20" />
+    <Property Name="TelefonNumarasi" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Şifre" Type="varchar" MaxLength="50" />
+    <Property Name="Fakültesi" Type="varchar" MaxLength="50" />
+    <Property Name="Bölümü" Type="varchar" MaxLength="50" />
+    <Property Name="Devamszilik" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblProgramSorumlusu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="OgrenciIsleriOtomasyonModelStoreContainer">
+    <EntitySet Name="tblAkademisyen" EntityType="Self.tblAkademisyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDersProgramı" EntityType="Self.tblDersProgramı" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDuyuru" EntityType="Self.tblDuyuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFakülteBölüm" EntityType="Self.tblFakülteBölüm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNotlar" EntityType="Self.tblNotlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProgramSorumlusu" EntityType="Self.tblProgramSorumlusu" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
